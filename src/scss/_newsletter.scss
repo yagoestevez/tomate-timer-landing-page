@@ -1,0 +1,127 @@
+///////////// NEWSLETTER /////////////
+#newsletter {
+  @include                gradient( $primary, 90deg );
+  position              : relative;
+  padding               : 10rem 3rem;
+  @include                setFlex( );
+  @include                onPhone {
+    padding             : 5rem 3rem;
+  }
+
+  .newsletter__container {
+    height              : 100%;
+    @include              maxWidth( 900px );
+  }
+  .newsletter__box {
+    position            : relative;
+    background          : rgba( $light, .8 );
+    clip-path           : polygon( 0% 0%, 100% 0%, 99% 80%, 85% 80%, 70% 100%, 75% 80%, 2% 80% );
+    padding             : 3rem 3rem 7rem 3rem;
+    color               : $dark;
+    transition          : background 200ms 200ms;
+    @include              maxWidth( 700px );
+    @include              onPhone {
+      padding             : 2rem 2rem 7rem 2rem;
+    }
+    
+    .newsletter__form {
+      transition        : opacity 200ms 200ms;
+      flex-direction    : column;
+      @include            setFlex( );
+
+      .newsletter__subtitle {
+        margin-bottom   : .5rem;
+        line-height     : 1.4rem; 
+        @include          onPhone {
+          font-size     : 1rem !important;
+        }
+      }
+      .newsletter__title {
+        padding-bottom  : 1rem;
+        line-height     : 1.4rem;
+        @include          heading( $primary );
+        @include          onPhone {
+          font-size     : 1.4rem !important;
+        }
+      }
+      input {
+        padding         : 1rem;
+        background      : $light;
+        border          : none;
+        float           : left;
+      }
+      input[type=email] {
+        @include          radius( 10px, 0, 0, 10px );
+        @include          onPhone {
+          width         : 100%;
+          border-radius : 0;
+        }
+      }
+      input[type=submit] {
+        cursor          : pointer;
+        font-weight     : bold;
+        transition      : 150ms;
+        @include          radius( 0, 10px, 10px, 0 );
+        @include          btnColors( $secondary, $light );
+        @include          onPhone {
+          @include        btnColors( $primary, $light );
+          width         : 100%;
+          border-radius : 0;
+        }
+
+        &:hover {
+          @include        btnColors( $primary, $light );
+        }
+        &:active {
+          background:     darken( $primary, 5 );
+          @include        onPhone {
+            @include      btnColors( $secondary, $light );
+          }
+        }
+      }
+    }
+    .newsletter__sent {
+      position          : absolute;
+      top               : 45%;
+      left              : 50%;
+      transform         : translate( -50%, -50% );
+      z-index           : -1;
+      width             : 100%;
+      padding           : 2rem;
+      text-align        : center;
+      font-size         : 1rem;
+      color             : $light;
+      opacity           : 0;
+      transition        : opacity 200ms 500ms;
+
+      .newsletter__title {
+        @include          heading( $light );
+        padding-bottom  : 1rem;
+        line-height     : 1rem;
+      }
+      p {
+        margin-bottom   : 1rem;
+      }
+    }
+  }
+  .newsletter__image {
+    position            : relative;
+    @include              maxWidth( 700px );
+  }
+  .sent {
+    background          : $secondary !important;
+  }
+
+  ////////////// CREDITS //////////////
+  #credits {
+    color               : rgba( $light, .7 );
+    position            : absolute;
+    left                : 0;
+    bottom              : 0;
+    width               : 100%;
+    text-align          : center;
+    font-size           : .8rem;
+    font-weight         : bold !important;
+    @include              links( rgba( $light, .8 ), $light, .8rem );
+  }
+}

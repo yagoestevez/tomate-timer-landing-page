@@ -1,7 +1,7 @@
 {
-  "name": "tribute-to-aaron-swartz",
+  "name": "tomate-timer-landing-page",
   "version": "1.0.0",
-  "description": "This is a tribute to Aaron Swartz.",
+  "description": "A landing page for Tomate Timer App.",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config=config/webpack.dev.js --open --host 0.0.0.0",
@@ -37,8 +37,5 @@
     "webpack": "^4.19.0",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.8"
-  },
-  "dependencies": {
-    "bootstrap": "^4.1.3"
   }
 }

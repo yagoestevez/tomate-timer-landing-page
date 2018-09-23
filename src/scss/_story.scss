@@ -1,0 +1,56 @@
+/////////////// STORY ///////////////
+#story {
+  background            : darken( $light, 2 );
+  padding               : 3rem;
+
+  .story__title {
+    padding             : 3rem 0;
+    @include              maxWidth( 900px );
+    @include              heading( $dark );
+    @include              onPhone {
+      display           : none;
+    }
+  }
+  .story__title--phone {
+    padding             : 1.5rem 0;
+    text-align          : center;
+    display             : none;
+    @include              heading( $dark );
+    @include              onPhone {
+      font-size         : 1.4rem !important;
+      display           : block;
+    }
+  }
+  .story__body {
+    min-height          : 100vh;
+    @include              maxWidth( 900px );
+    @include              onPhone {
+      @include            setFlex( );
+      flex-direction    : column;
+
+    }
+  }
+  .story__image {
+    width               : 33%;
+    margin-right        : 3rem;
+    float               : left;
+    shape-outside       : circle( 50% );
+    @include              onPhone {
+      width             : 50%;
+      margin-right      : 0;
+      float             : none;
+    }
+  }
+  p {
+    text-align          : justify;
+    hyphens             : auto;
+    color               : $dark;
+    margin-bottom       : 1rem;
+  }
+  a {
+    text-decoration     : underline;
+  }
+  .em {
+    color               : $primary;
+  }
+}

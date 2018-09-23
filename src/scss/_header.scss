@@ -1,0 +1,194 @@
+/////////////// HEADER ///////////////
+#header {
+  min-height              : 100%;
+
+  #nav-bar {
+    background            : darken( $light, 2 );
+    position              : fixed;
+    top                   : 0;
+    left                  : 0;
+    right                 : 0;
+    height                : 60px;
+    z-index               : 1024; 
+    @include                onPhoneLandscape {
+      height              : 45px;
+    }
+
+    .navbar__toggler {
+      display             : none;
+      position            : absolute;
+      top                 : 0px;
+      right               : 0px;
+      height              : 60px;
+      border              : none;
+      padding             : 1rem;
+      transition          : 200ms;
+      @include              btnColors( none, $primary );
+      @include              onPhone {
+        display           : flex;
+      }
+      @include              onPhoneLandscape {
+        height            : 45px;
+        padding           : .5rem;
+      }
+      &:hover {
+        @include            btnColors( $primary, $light );
+      }
+    }
+    .navbar {
+      height              : 100%;
+      padding             : .5rem;
+      @include              maxWidth( 1200px );
+      @include              setFlex( space-between );
+
+      .navbar__brand {
+        @include            setFlex( none, none );
+        @include            onPhone {
+          position        : absolute;
+          left            : 50%;
+          transform       : translate( -50%, 0 );
+          #header-img {
+            height        : 15px !important;
+          }
+        }
+      }
+      .navbar__item {
+        padding           : .5rem;
+        @include            onTablet {
+          padding         : .3rem;
+        }
+
+        &.active, &.active a {
+          color           : $primary !important;
+        }
+      }
+      .navbar__links {
+        list-style-type   : none;
+        transition        : opacity 200ms;
+        @include            setFlex( none, none );
+        @include            onPhone {
+          position        : absolute;
+          top             : 0;
+          left            : 0;
+          pointer-events  : none;
+          height          : 100vh;
+          width           : 100vw;
+          background      : $light;
+          @include          setFlex( center, center );
+          flex-direction  : column; 
+          z-index         : -1;
+          opacity         : 0;
+        }
+        @include            onPhoneLandscape {
+          flex-direction  : row !important;
+        }
+        &.show {
+          opacity         : 1;
+          pointer-events  : all;
+        }
+        .navbar__item {
+          @include          onPhone {
+            margin-bottom : 1.4rem !important;
+          }
+        }
+        .nav-link {
+          @include          onTablet {
+            font-size     : .9rem !important;
+          }
+          @include          onPhone {
+            font-size     : 1.4rem !important;
+          }
+        }
+      }
+    }
+  }
+  #banner {
+    position              : relative;
+    height                : 100vh;
+    @include                gradient( $secondary, 45deg );
+    @include                setFlex( center, none );
+    @include                onTablet {
+      padding-top         : 60px;
+    }
+
+    .banner__header {
+      height              : 100%;
+      margin              : 0;
+      padding             : 5rem;
+      @include              bgImage( '../Assets/Images/Header-Background.svg' );
+      @include              setFlex( flex-start, center );
+      @include              onTablet {
+        padding           : 2rem 1rem 1rem 1rem;
+        @include            setFlex( center, flex-start );
+      }
+
+      .banner__intro {
+        background        : rgba( $light, .9 );
+        padding           : 3rem;
+        color             : $dark;
+        border            : 2px solid $light;
+        @include            font( $mainFont, 1.4rem );
+        @include            setColWidth( 50% );
+        @include            onTablet {
+          padding         : 1.4rem;
+          @include          setColWidth( 100% );
+        }
+        @include            onPhoneLandscape {
+          padding         : .5rem;
+          @include          setColWidth( 50% );
+        }
+  
+        .banner__title {
+          margin-bottom   : 1rem;
+          text-align      : center;
+          font-weight     : normal;
+          @include          heading( $primary );
+          @include          onPhone {
+            font-size     : 1.5rem !important;
+          }
+          @include          onPhoneLandscape {
+            font-size     : 1.1rem !important;
+            margin-bottom : .3rem;
+          }
+        }
+        .banner__desc {
+          line-height     : 1.6rem;
+          font-size       : 1rem;
+          margin-bottom   : 1rem;
+          @include          onPhone {
+            font-size     : .8rem !important;
+          }
+          @include          onPhoneLandscape {
+            margin-bottom : .5rem;
+            font-size     : .7rem !important;
+            line-height   : 1.1rem;
+          }
+        }
+        .banner__cta {
+          display         : block;
+          width           : 100%;
+          padding         : .8rem;
+          margin-top      : 1.3rem;
+          text-align      : center;
+          transition      : 200ms; 
+          @include          btnColors( $primary, $light );
+          @include          font( $markerFont, 1.2rem );
+          @include          onPhone {
+            padding       : .5rem;
+            font-size     : 1rem !important;
+          }
+          @include          onPhoneLandscape {
+            padding       : .3rem;
+            margin-top    : .3rem;
+            line-height   : 1rem;
+            font-size     : 1rem !important;
+          }
+
+          &:hover {
+            @include        btnColors( $secondary, $light );
+          }
+        }
+      }
+    }
+  }
+}

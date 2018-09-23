@@ -1,0 +1,101 @@
+////////////// MIXINS //////////////
+@mixin separator ( $color ) {
+  width                       : 50px;
+  height                      : 2px;
+  margin                      : 1.4rem 0;
+  background                  : $color;
+}
+
+@mixin font ( $fam, $size ) {
+  font-family                 : $fam;
+  font-size                   : $size;
+  font-weight                 : normal;
+}
+
+@mixin gradient ( $color, $deg ) {
+  background                  : $color;
+  background                  : repeating-linear-gradient(
+                                  $deg,
+                                  $color,
+                                  $color 15px,
+                                  lighten($color,1) 15px,
+                                  lighten($color,1) 30px
+                                );
+  background-attachment       : fixed;
+  @include                      onPhone {
+    background-attachment     : scroll;
+  }
+}
+
+@mixin bgImage ( $url ) {
+  background                  : url( $url ) no-repeat bottom;
+  background-attachment       : fixed;
+  @include                      onPhone {
+    background-attachment     : scroll;
+  }
+}
+
+@mixin btnColors ( $bg, $text ) {
+  background                  : $bg !important;
+  color                       : $text !important;
+}
+
+@mixin links ( $main, $hover, $size:1rem, $deco:none ) {
+  a {
+    color                     : $main !important;
+    text-decoration           : $deco;
+    font-size                 : $size;
+    font-weight               : bold;
+    outline                   : none;
+    transition                : color 300ms;
+    &:hover {
+      color                   : $hover !important;
+      text-decoration         : none;
+    }
+  }
+}
+
+@mixin heading ( $color, $size:2rem, $font:$markerFont ) {
+  color                       : $color !important;
+  font-size                   : $size !important;
+  font-family                 : $font;
+  font-weight                 : normal;
+}
+
+@mixin radius ( $tl, $tr, $br, $bl ) {
+  border-top-left-radius      : $tl;
+  border-top-right-radius     : $tr;
+  border-bottom-right-radius  : $br;
+  border-bottom-left-radius   : $bl;
+}
+
+@mixin setFlex ( $justify:center, $align:center ) {
+  display                     : flex;
+  @if $justify != none {
+    justify-content           : $justify;
+  }
+  @if $align != none {
+    align-items               : $align;
+  }
+}
+
+@mixin setColWidth( $percent ) {
+  flex                        : 0 0 $percent;
+  max-width                   : $percent;
+}
+
+@mixin maxWidth( $size ) {
+  max-width                   : $size;
+  margin                      : 0 auto;
+}
+
+// Media Queries
+@mixin onPhone {
+  @media (max-width: 600px) { @content; }
+}
+@mixin onPhoneLandscape {
+  @media (max-height: 400px) { @content; }
+}
+@mixin onTablet {
+  @media (max-width: 900px) { @content; }
+}

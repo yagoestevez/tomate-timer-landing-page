@@ -1,0 +1,62 @@
+/*
+ *  Brought to you by Yago Estévez. https://twitter.com/yagoestevez
+ */
+
+////////////// IMPORTS ///////////////
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker|Merienda');
+
+///////////// VARIABLES //////////////
+$primary        : #dc0f17;
+$secondary      : #5aac46;
+$dark           : #444;
+$light          : #fff;
+$yellow         : #ffcc00;
+$mainFont       : 'Merienda', Verdana, Geneva, Tahoma, sans-serif;
+$markerFont     : 'Permanent Marker', sans-serif;
+
+/////////////// MIXINS ///////////////
+@import './mixins';
+@import './header';
+@import './story';
+@import './features';
+@import './guide';
+@import './app';
+@import './newsletter';
+
+////////////// GENERAL ///////////////
+*,
+*::before,
+*::after,
+:root {
+  margin        : 0;
+  padding       : 0;
+  box-sizing    : border-box;
+}
+
+html, body {
+  height        : 100%;
+  line-height   : 1.8rem;
+}
+
+body {
+  @include        font( $mainFont, 1.2rem );
+  @include        links( $secondary, $primary );
+  color         : $light;
+}
+
+.wave__bottom, .wave__top {
+  position      : absolute;
+  left          : 0;
+  width         : 100%;
+  fill          : darken( $light, 2 );
+}
+
+.wave__bottom {
+  bottom        : 0;
+  margin-bottom : -2px;
+}
+
+.wave__top {
+  top           : 0;
+  margin-top    : -2px;
+}

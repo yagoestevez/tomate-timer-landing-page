@@ -10,7 +10,7 @@ This is a Landing Page project for a [Pomodoro app](https://codepen.io/yagoestev
 
 #### Try it out!
 
-If you want to see it live, open [this pen](https://) on Codepen.
+If you want to see it live, open [this pen](https://codepen.io/yagoestevez/full/pOBLeK/) on Codepen.
 
 #### User Stories
 

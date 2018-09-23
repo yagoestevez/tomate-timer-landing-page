@@ -1,0 +1,74 @@
+//////////////// APP ////////////////
+#app {
+  background        : darken( $light, 2 );
+  padding           : 10rem 3rem;
+  color             : $dark;
+  @include            onPhone {
+    padding         : 3rem;
+  }
+
+  .app__container {
+    @include          maxWidth( 900px );
+    @include          setFlex( );
+    @include          onTablet {
+      flex-direction: column;
+    }
+
+    .app__content {
+      
+    }
+
+    .app__image {
+      padding-right : 1rem;
+      @include        setColWidth( 50% );
+      @include        onPhone {
+        @include      setColWidth( 100% );
+      }
+    }
+    .app__title {
+      padding       : 3rem 0;
+      margin        : 0 auto !important;
+      text-align    : center;
+      @include        heading( $dark );
+      @include        onPhone {
+        padding     : 1rem;
+        font-size   : 1.4rem !important;
+      }
+      .em {
+        color       : $primary;
+      }
+    }
+    .app__cta {
+      display       : block;
+      width         : 100%;
+      padding       : .8rem;
+      margin-top    : 2rem;
+      text-align    : center;
+      transition    : 200ms; 
+      @include        btnColors( $primary, $light );
+      @include        font( $markerFont, 1.2rem );
+      @include        onPhone {
+        padding     : .5rem;
+        font-size   : 1rem !important;
+      }
+
+      &:hover {
+        @include      btnColors( $secondary, $light );
+      }
+    }
+    .separator {
+      @include        separator( $primary );
+    }
+    .em {
+      color         : $primary;
+    }
+    p {
+      text-align    : justify;
+      hyphens       : auto;
+      margin-bottom : 1rem;
+      @include        onPhone {
+        font-size   : 1rem;
+      }
+    }
+  }
+}

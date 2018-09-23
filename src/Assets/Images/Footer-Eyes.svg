@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 132 46.7">
+  <g class="eye" transform="matrix(.97232 0 0 .975 -84.71 -202.39)">
+    <circle cx="114" cy="223" r="15" fill="#630c0c"/>
+    <circle cx="108" cy="218.1" r="6" fill="#fff"/>
+    <circle cx="122.2" cy="227.7" r="3" fill="#fff"/>
+  </g>
+  <g class="eye" transform="translate(-84.71 -202.39) scale(.97232)">
+    <circle cx="196" cy="224" r="15" fill="#630c0c"/>
+    <circle cx="191" cy="219" r="6" fill="#fff"/>
+    <circle cx="204" cy="229" r="3" fill="#fff"/>
+  </g>
+  <path fill="#630c0c" d="M51.4 30A14.5 16.8 0 0 0 66 46.7a14.5 16.8 0 0 0 14.5-16.6"/>
+  <path fill="#ef4958" d="M66 34.4a11.5 11.5 0 0 0-9.7 5.3c2.3 3.1 5.8 5.1 9.7 5.1 3.8 0 7.3-2 9.7-5.1a11.5 11.5 0 0 0-9.7-5.3z"/>
+  <g fill="#ef4958" transform="translate(-84.71 -202.39) scale(.97232)">
+    <circle cx="215" cy="245" r="6"/>
+    <circle cx="95" cy="245" r="6"/>
+  </g>
+</svg>

@@ -86,7 +86,7 @@ module.exports = {
       },
       {
         // Applies the following rules to image files: jpg, jpeg, png or gif.
-        test: /\.(jpe?g|png|gif)$/,
+        test: /\.(jpe?g|png|gif|svg)$/,
         use: [
           {
             loader: 'file-loader',

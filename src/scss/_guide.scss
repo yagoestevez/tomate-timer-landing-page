@@ -1,0 +1,49 @@
+/////////////// GUIDE ///////////////
+#guide {
+  position            : relative;
+  padding             : 10rem 3rem;
+  @include              gradient( $primary, -45deg );
+  @include              onPhone {
+    padding           : 3rem;
+  }
+
+  .guide__title {
+    padding           : 3rem 0;
+    margin            : 0 auto !important;
+    text-align        : center;
+    @include            heading( $light );
+    @include            onPhone {
+      font-size       : 1.4rem !important;
+    }
+    .em {
+      color           : $yellow;
+    }
+  }
+  .guide__container {
+    @include            maxWidth( 900px );
+    .video__wrapper {
+      position        : relative;
+      padding         : 25px 0 53% 0;
+      height          : 0;
+      width           : 100%;
+      
+      #video {
+        position      : absolute;
+        top           : 0;
+        left          : 0;
+        width         : 100%;
+        height        : 100%;
+      }
+    }
+  }
+  p {
+    padding           : 2rem;
+    text-align        : justify;
+    hyphens           : auto;
+    @include            maxWidth( 900px );
+    @include            onPhone {
+      padding         : 2rem 0;
+      font-size       : 1rem;
+    }
+  }
+}
