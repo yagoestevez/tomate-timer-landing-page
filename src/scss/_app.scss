@@ -14,10 +14,6 @@
       flex-direction: column;
     }
 
-    .app__content {
-      
-    }
-
     .app__image {
       padding-right : 1rem;
       @include        setColWidth( 50% );
